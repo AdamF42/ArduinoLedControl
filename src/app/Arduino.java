@@ -83,11 +83,7 @@ public class Arduino extends JFrame
         //Add the on button.
         JButton btnOn = new JButton("On");
         panel_1.add(btnOn);
-
-//        //Add the blink button.
-//        JButton btnBlink = new JButton("Blink");
-//        panel_1.add(btnBlink);
-
+        
         //Add the off button.
         JButton btnOff = new JButton("Off");
         panel_1.add(btnOff);
@@ -105,8 +101,7 @@ public class Arduino extends JFrame
                 //Set up the values for the USB port.
                 comPort = SerialPort.getCommPort(comPortName);
                 comPort.setBaudRate(baudRate);
-//                SerialPort[] test = SerialPort.getCommPorts();
-//                test[1].openPort();
+
                 //If the port is not closed, open the USB port.
                 if(comPort.isOpen() == false)
                 {
@@ -171,27 +166,6 @@ public class Arduino extends JFrame
             }
         });
 
-//        //Listener for the blink button.
-//        btnBlink.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e)
-//            {
-//                //Turns on the #13 pin LED and flashes it 10 times.
-//                if(comPort.isOpen() == true)
-//                {
-//                    //Send a 2 to the Arduino and update the user.
-//                    System.out.println("Status: LED blinking");
-//                    lblStatus.setText("Status: LED blinking");
-//                    outPut.print("2");
-//                    outPut.flush();
-//                }
-//                else
-//                {
-//                    //Update the status/console if the Arduino hasn't been connected.
-//                    System.out.println("Connect Arduino");
-//                    lblStatus.setText("Status: Connect Arduino");
-//                }
-//            }
-//        });
 
         //Listener for the off button.
         btnOff.addActionListener(new ActionListener() {
